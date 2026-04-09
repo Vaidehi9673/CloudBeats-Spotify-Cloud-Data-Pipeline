@@ -19,6 +19,9 @@ The pipeline follows the industry-standard **Lakehouse** pattern:
 - **Cloud Infrastructure:** AWS S3, IAM
 - **Data Processing:** Databricks (Serverless Compute)
 - **Data Governance:** Unity Catalog (External Locations)
+- **Storage**: Delta Lake (ACID transactions, Time Travel)
+- **Orchestration**: Databricks Workflows (Job scheduling & dependencies)
+- **Visualization**: Databricks SQL Dashboards
 - **DevOps/Tools:** Git, VS Code, python-dotenv
 
 ---
@@ -29,16 +32,24 @@ The pipeline follows the industry-standard **Lakehouse** pattern:
 - **Medallion Architecture:** Built a modular pipeline that separates raw ingestion from business logic, ensuring high data quality and lineage.
 - **Data Validation:** Integrated validation checks to ensure row count consistency during the transition from Landing to Silver layers.
 
----
+## Data Pipeline Architecture
+- Workflow DAG
+## Executive Insights Dashboard
+CloudBeats Dashboard
+
 
 ## Project Structure
 ```text
 Spotify-Cloud-Pipeline/
 ├── ingestion/
-│   └── loading.py         # Python script for local -> S3 upload
+│   └── loading.py               # Local to S3 script
 ├── notebooks/
-│   ├── 01_bronze_ingestion.py   # Raw CSV to Delta conversion
-│   └── 02_silver_cleaning.py    # Data cleaning & feature engineering
-├── .gitignore                   # Prevents credential leaks (.env)
-├── README.md                    # Project documentation
-└── requirements.txt             # Project dependencies
+│   ├── 01_bronze_ingestion.py   # Bronze Layer
+│   ├── 02_silver_cleaning.py    # Silver Layer
+│   └── 03_silver_to_gold.py      # Gold Layer (Add this too!)
+├── images/                      
+│   ├── workflow_dag.png         # Screenshot of your Green Job Run
+│   └── final_dashboard.png      # Screenshot of your CloudBeats Dashboard
+├── .gitignore                   
+├── README.md                    
+└── requirements.txt
