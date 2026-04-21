@@ -46,10 +46,10 @@ Spotify-Cloud-Pipeline/
 ├── notebooks/
 │   ├── 01_bronze_ingestion.py   # Bronze Layer
 │   ├── 02_silver_cleaning.py    # Silver Layer
-│   └── 03_silver_to_gold.py      # Gold Layer (Add this too!)
+│   └── 03_silver_to_gold.py      # Gold Layer 
 ├── images/                      
-│   ├── workflow_dag.png         # Screenshot of your Green Job Run
-│   └── final_dashboard.png      # Screenshot of your CloudBeats Dashboard
+│   ├── workflow_dag.png         # Screenshot of Green Job Run
+│   └── final_dashboard.png      # Screenshot of CloudBeats Dashboard
 ├── .gitignore                   
 ├── README.md                    
 └── requirements.txt
